@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/Shotgun.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Animations/Copeta/Disparo_Escopeta_01.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Animations/Copeta/Disparo_Escopeta_02.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Animations/Copeta/Disparo_Escopeta_03.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Animations/Copeta/Disparo_Escopeta_04.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 13.0864, 10 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "fire",
+"speed": 40.0
+} ]
+
+[node name="Shotgun" type="KinematicBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 2
+collision_mask = 2
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( 97.5488, -2.82571 )
+scale = Vector2( 6.14913, 3.13829 )
+shape = SubResource( 1 )
+
+[node name="LifeTimer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 0.1
+one_shot = true
+autostart = false
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
+
+position = Vector2( -0.98938, -78.908 )
+scale = Vector2( 2.77283, 1.48433 )
+frames = SubResource( 2 )
+animation = "fire"
+frame = 1
+centered = false
+
+[connection signal="timeout" from="LifeTimer" to="." method="_on_LifeTimer_timeout"]
+
+

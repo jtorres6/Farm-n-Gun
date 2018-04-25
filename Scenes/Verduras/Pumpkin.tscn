@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Pumpkin.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/calabaza.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Carteles/Cartel_Calabaza.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Mont.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 31.9865, 30 )
+
+[node name="Vegetable" type="Area2D"]
+
+position = Vector2( 496.594, 565.09 )
+z_index = -1
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Plantado" type="Sprite" parent="." index="0"]
+
+position = Vector2( -6.59399, 14.91 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Offset", "Region", "Visibility", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 3.40601, 14.91 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Timer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 8.0
+one_shot = true
+autostart = false
+
+[node name="SinPlantar" type="Sprite" parent="." index="3"]
+
+position = Vector2( 3.40601, 4.90997 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Creciendo" type="Sprite" parent="." index="4"]
+
+position = Vector2( 3.40601, 24.91 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="body_entered" from="." to="." method="_on_Vegetable_body_entered"]
+
+[connection signal="body_exited" from="." to="." method="_on_Vegetable_body_exited"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+

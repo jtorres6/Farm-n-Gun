@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/NormalShot.wav-85dc8bc016329088861bb5c825974d71.sample"
+
+[deps]
+
+source_file="res://Sounds/NormalShot.wav"
+source_md5="6f28e15cd78882dc1c28028565ac751e"
+
+dest_files=[ "res://.import/NormalShot.wav-85dc8bc016329088861bb5c825974d71.sample" ]
+dest_md5="6043b9660a41190f5961dd198af71bcf"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

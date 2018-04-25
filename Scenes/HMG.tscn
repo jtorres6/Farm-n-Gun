@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/HeavyMachineGun.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Animations/Tralleta/llamaradas_01.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Animations/Tralleta/llamaradas_02.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Animations/Tralleta/llamaradas_03.png" type="Texture" id=4]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 46.8987
+height = 60.6014
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "fire",
+"speed": 1.5
+} ]
+
+[node name="Projectile" type="KinematicBody2D"]
+
+position = Vector2( -4.47388, 9.22495 )
+scale = Vector2( 0.527829, 0.527829 )
+input_pickable = false
+collision_layer = 2
+collision_mask = 2
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( 36.0812, -0.960735 )
+scale = Vector2( 0.561965, 0.209787 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
+
+position = Vector2( 82.417, 39.5016 )
+frames = SubResource( 2 )
+animation = "fire"
+__meta__ = {
+"_edit_lock_": true
+}
+
+

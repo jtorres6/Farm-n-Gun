@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/binbash - menu maybe.wav-bfb2cd3225f0e3851d471418e63e83f8.sample"
+
+[deps]
+
+source_file="res://Sounds/binbash - menu maybe.wav"
+source_md5="f9ebd520355fd53a1ba9388378d45041"
+
+dest_files=[ "res://.import/binbash - menu maybe.wav-bfb2cd3225f0e3851d471418e63e83f8.sample" ]
+dest_md5="1ea0ce244b10d7b276f960856e5ef56f"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

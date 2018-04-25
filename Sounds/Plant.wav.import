@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Plant.wav-a2899c5494cba478334536c203e1a3ab.sample"
+
+[deps]
+
+source_file="res://Sounds/Plant.wav"
+source_md5="eb91490329ec2aab766c3da23e91f8a8"
+
+dest_files=[ "res://.import/Plant.wav-a2899c5494cba478334536c203e1a3ab.sample" ]
+dest_md5="73a491946a2545ed94c329c6b2ef003e"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

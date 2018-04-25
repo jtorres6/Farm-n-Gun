@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ShotGun.wav-589f1ed8a3826218c11573b335ed0acd.sample"
+
+[deps]
+
+source_file="res://Sounds/ShotGun.wav"
+source_md5="947b2ce9a120115f326f30b7d1d0bf21"
+
+dest_files=[ "res://.import/ShotGun.wav-589f1ed8a3826218c11573b335ed0acd.sample" ]
+dest_md5="069e74a52a8fda781f59a68bcb5c684c"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
