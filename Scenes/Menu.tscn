@@ -26,7 +26,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Menu" type="CanvasLayer" index="0"]
+[node name="Menu" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -119,7 +119,35 @@ flat = true
 align = 0
 _sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
 
-[node name="Exit" type="Button" parent="." index="3"]
+[node name="Ranking" type="Button" parent="." index="3"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -482.0
+margin_top = -24.0
+margin_right = -300.0
+margin_bottom = 46.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.780392, 0.713726, 0.705882, 1 )
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 0
+shortcut = null
+group = null
+text = "RANKING"
+flat = true
+align = 0
+_sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="Exit" type="Button" parent="." index="4"]
 
 anchor_left = 1.0
 anchor_top = 1.0
@@ -147,7 +175,7 @@ flat = true
 align = 2
 _sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
 
-[node name="GameTitle" type="Label" parent="." index="4"]
+[node name="GameTitle" type="Label" parent="." index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -173,17 +201,17 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Fade" parent="." index="5" instance=ExtResource( 3 )]
+[node name="Fade" parent="." index="6" instance=ExtResource( 3 )]
 
-[node name="Menu 1-01" type="Sprite" parent="." index="6"]
+[node name="Menu 1-01" type="Sprite" parent="." index="7"]
 
-position = Vector2( 510.782, 304.801 )
+position = Vector2( 510.782, 306.801 )
 scale = Vector2( 1.66082, 1.71557 )
 z_index = -1
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
 
-[node name="MenuTheme" type="AudioStreamPlayer" parent="." index="7"]
+[node name="MenuTheme" type="AudioStreamPlayer" parent="." index="8"]
 
 stream = ExtResource( 5 )
 volume_db = -6.25
@@ -196,6 +224,8 @@ bus = "Master"
 [connection signal="pressed" from="Controls" to="." method="_on_Controls_pressed"]
 
 [connection signal="pressed" from="Credits" to="." method="_on_Credits_pressed"]
+
+[connection signal="pressed" from="Ranking" to="." method="_on_Ranking_pressed"]
 
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
 

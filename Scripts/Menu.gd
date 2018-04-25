@@ -25,6 +25,10 @@ func _on_Controls_pressed():
 	fade._loadScene("res://Scenes/Controls.tscn")
 	fade.fading_out = true
 
+func _on_Ranking_pressed():
+	$Ranking.disabled = true
+	fade._loadScene("res://Scenes/Ranking.tscn")
+	fade.fading_out = true
 
 func _on_MenuTheme_finished():
 	$MenuTheme.play()
