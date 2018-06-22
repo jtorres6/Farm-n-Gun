@@ -7,8 +7,6 @@ valid=false
 [deps]
 
 source_file="res://Sprites/Carteles/._Cartel_zanahoria.png"
-source_md5="94db0eb0fccc26e27a4de33c970e46c0"
-
 [params]
 
 compress/mode=0

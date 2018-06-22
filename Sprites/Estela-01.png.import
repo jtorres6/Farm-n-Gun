@@ -7,10 +7,7 @@ path="res://.import/Estela-01.png-7a014da47efecc8105fbb6f53e137834.stex"
 [deps]
 
 source_file="res://Sprites/Estela-01.png"
-source_md5="2c4965eaf3e180eea3c046debe1cf0fb"
-
 dest_files=[ "res://.import/Estela-01.png-7a014da47efecc8105fbb6f53e137834.stex" ]
-dest_md5="f5032faa1e258bdddf7bef2adeb34aac"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/llamaradas_02.png-742591cf841ebd5cc24ed76b20da5dfa.stex"
 [deps]
 
 source_file="res://Sprites/Animations/Tralleta/llamaradas_02.png"
-source_md5="11d41df6a81e8e244284fb5695d61c39"
-
 dest_files=[ "res://.import/llamaradas_02.png-742591cf841ebd5cc24ed76b20da5dfa.stex" ]
-dest_md5="b1d38e7c351fb567492601743bdafa6b"
 
 [params]
 

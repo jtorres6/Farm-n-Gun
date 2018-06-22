@@ -7,10 +7,7 @@ path="res://.import/binbash - ze crows.wav-db55fce1ac1ecd988e168c951f56fb49.samp
 [deps]
 
 source_file="res://Sounds/binbash - ze crows.wav"
-source_md5="129ff24570e41cded45da29231d56d75"
-
 dest_files=[ "res://.import/binbash - ze crows.wav-db55fce1ac1ecd988e168c951f56fb49.sample" ]
-dest_md5="23af3020a6c1f6c4a4da41e01811f321"
 
 [params]
 

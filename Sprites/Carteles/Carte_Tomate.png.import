@@ -7,10 +7,7 @@ path="res://.import/Carte_Tomate.png-c0ecf08f24a2b243ca84242d7bc5f9dd.stex"
 [deps]
 
 source_file="res://Sprites/Carteles/Carte_Tomate.png"
-source_md5="7097a97e89795386b16d7b91dc9f2274"
-
 dest_files=[ "res://.import/Carte_Tomate.png-c0ecf08f24a2b243ca84242d7bc5f9dd.stex" ]
-dest_md5="dd2fc052ec1d00d625bf250203f36a22"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/Disparo_caminando_Derecha_04.png-30f4bf5a884080cc0d6f3c13763
 [deps]
 
 source_file="res://Sprites/Animations/Arriba/Disparo_caminando_Derecha_04.png"
-source_md5="0c600fbd93a4fba5dbcb5489e27c0df6"
-
 dest_files=[ "res://.import/Disparo_caminando_Derecha_04.png-30f4bf5a884080cc0d6f3c13763d99dc.stex" ]
-dest_md5="af41ce796e868a65a2264b2b44fc939c"
 
 [params]
 

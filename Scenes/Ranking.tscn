@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Ranking.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Creditos_fondo.png" type="Texture" id=2]
@@ -37,7 +37,26 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="Shader" id=5]
+
+code = "shader_type canvas_item;
+
+varying flat vec4 our_color;
+
+void vertex() {
+    our_color = COLOR.rgba;
+}
+
+void fragment() {
+    COLOR.r = COLOR.r * 0.3;
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+
+render_priority = 0
+shader = SubResource( 5 )
+
+[sub_resource type="DynamicFont" id=7]
 
 size = 30
 use_mipmaps = false
@@ -540,6 +559,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Score2" type="Label" parent="." index="21"]
 
+material = SubResource( 6 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -580,7 +600,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -607,7 +627,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null

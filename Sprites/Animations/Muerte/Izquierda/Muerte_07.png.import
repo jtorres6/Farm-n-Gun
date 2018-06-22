@@ -7,10 +7,7 @@ path="res://.import/Muerte_07.png-4321c3d148a4937c2daddacb0190089e.stex"
 [deps]
 
 source_file="res://Sprites/Animations/Muerte/Izquierda/Muerte_07.png"
-source_md5="6f20dd723a27dac33218f12b2a7aed06"
-
 dest_files=[ "res://.import/Muerte_07.png-4321c3d148a4937c2daddacb0190089e.stex" ]
-dest_md5="1389b289aca62c330b40b1f4a1a6b701"
 
 [params]
 

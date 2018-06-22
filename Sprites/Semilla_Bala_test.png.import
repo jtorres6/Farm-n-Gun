@@ -7,10 +7,7 @@ path="res://.import/Semilla_Bala_test.png-43b7dd45c1b71865d4931d778c7be20b.stex"
 [deps]
 
 source_file="res://Sprites/Semilla_Bala_test.png"
-source_md5="d4825e9e481335c83b414613658245d7"
-
 dest_files=[ "res://.import/Semilla_Bala_test.png-43b7dd45c1b71865d4931d778c7be20b.stex" ]
-dest_md5="20de42221302f1d0ea0449beedfb4bc0"
 
 [params]
 

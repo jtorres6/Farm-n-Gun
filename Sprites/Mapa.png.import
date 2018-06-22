@@ -7,10 +7,7 @@ path="res://.import/Mapa.png-e583878206320c8a77b11b4af3d335e6.stex"
 [deps]
 
 source_file="res://Sprites/Mapa.png"
-source_md5="41e7df82a9ccddb4598e7ee9658fa208"
-
 dest_files=[ "res://.import/Mapa.png-e583878206320c8a77b11b4af3d335e6.stex" ]
-dest_md5="aacedbe09f1c400bc832f4176685fe55"
 
 [params]
 

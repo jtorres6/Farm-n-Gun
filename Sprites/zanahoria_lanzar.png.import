@@ -7,10 +7,7 @@ path="res://.import/zanahoria_lanzar.png-9a51ca3cd32e83a6fec86227351eadb8.stex"
 [deps]
 
 source_file="res://Sprites/zanahoria_lanzar.png"
-source_md5="a204782186ad940c66f2e7ddc5ff2c3b"
-
 dest_files=[ "res://.import/zanahoria_lanzar.png-9a51ca3cd32e83a6fec86227351eadb8.stex" ]
-dest_md5="9838f48e9115277a6a8901df25b5c297"
 
 [params]
 

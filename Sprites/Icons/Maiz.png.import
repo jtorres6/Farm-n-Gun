@@ -7,10 +7,7 @@ path="res://.import/Maiz.png-a8e9bee4b4773085eca0daa728706d5e.stex"
 [deps]
 
 source_file="res://Sprites/Icons/Maiz.png"
-source_md5="102e12b31130bd3f6dc2f4ef0c194374"
-
 dest_files=[ "res://.import/Maiz.png-a8e9bee4b4773085eca0daa728706d5e.stex" ]
-dest_md5="fb94ff2a17f1d410e565daf6f144452f"
 
 [params]
 

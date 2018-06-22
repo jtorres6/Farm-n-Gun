@@ -8,6 +8,7 @@
 
 [sub_resource type="DynamicFontData" id=1]
 
+hinting = 2
 font_path = "res://Fonts/Pixel Cowboy.otf"
 
 [sub_resource type="DynamicFont" id=2]
@@ -26,7 +27,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Menu" type="CanvasLayer"]
+[node name="Menu" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -215,6 +216,7 @@ _sections_unfolded = [ "Z Index" ]
 
 stream = ExtResource( 5 )
 volume_db = -6.25
+pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"

@@ -7,10 +7,7 @@ path="res://.import/Calabaza.png-4f210aed2a942c32c73a36f034ff81cd.stex"
 [deps]
 
 source_file="res://Sprites/Icons/Calabaza.png"
-source_md5="68c77ff0c3f98e27bbe0af8bb6a9da83"
-
 dest_files=[ "res://.import/Calabaza.png-4f210aed2a942c32c73a36f034ff81cd.stex" ]
-dest_md5="d8d5f76304f76a9147414f3ed04b1d62"
 
 [params]
 

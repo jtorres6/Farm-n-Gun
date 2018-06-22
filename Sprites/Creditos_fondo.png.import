@@ -7,10 +7,7 @@ path="res://.import/Creditos_fondo.png-33fdc53e0641dd4cc507a1572e1c98d5.stex"
 [deps]
 
 source_file="res://Sprites/Creditos_fondo.png"
-source_md5="b5036a31dfb923b564d4cb667e951be5"
-
 dest_files=[ "res://.import/Creditos_fondo.png-33fdc53e0641dd4cc507a1572e1c98d5.stex" ]
-dest_md5="19b3551a79eeabbe241e8972745c9e10"
 
 [params]
 

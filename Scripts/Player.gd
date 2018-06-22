@@ -57,7 +57,7 @@ func _physics_process(delta):
 			ammo = 0
 			get_parent().get_node("LabelAmmo").text = "UNLIMITED"
 			weapon = 0
-		
+			
 		if Input.is_action_pressed("ui_right"):
 			motion.x += ACCELERATION
 			if motion.x > MAX_SPEED:

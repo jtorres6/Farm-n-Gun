@@ -7,10 +7,7 @@ path="res://.import/nabo.png-ac19d499f2412f5a378dbb80da1fac90.stex"
 [deps]
 
 source_file="res://Sprites/nabo.png"
-source_md5="2b7ce43e3f21f5257298cadef6c82244"
-
 dest_files=[ "res://.import/nabo.png-ac19d499f2412f5a378dbb80da1fac90.stex" ]
-dest_md5="65c8c650ed7f609c0f11f8ea04da7f30"
 
 [params]
 
