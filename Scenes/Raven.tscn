@@ -1,26 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Raven.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Animations/Raven/Cuevo_pose_01.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Animations/Raven/Cuevo_pose_02.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Animations/Raven/Cuevo_pose_03.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Animations/Raven/Cuevo_pose_04.png" type="Texture" id=5]
-
-[sub_resource type="Shader" id=1]
-
-code = "shader_type canvas_item;
-render_mode unshaded;
-uniform float time;
-
-void fragment(){
-	COLOR = texture(TEXTURE, vec2(5.0,5.0));
-}"
-
-[sub_resource type="ShaderMaterial" id=2]
-
-render_priority = 0
-shader = SubResource( 1 )
-shader_param/time = null
 
 [sub_resource type="SpriteFrames" id=3]
 
@@ -30,6 +14,7 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+_sections_unfolded = [ "Resource" ]
 
 [sub_resource type="CircleShape2D" id=4]
 
@@ -44,7 +29,6 @@ height = 20.0
 
 [node name="Raven" type="KinematicBody2D" index="0"]
 
-material = SubResource( 2 )
 input_pickable = false
 collision_layer = 2
 collision_mask = 3
@@ -57,9 +41,8 @@ _sections_unfolded = [ "Collision", "Linear", "Material", "collision" ]
 z_index = -1
 frames = SubResource( 3 )
 animation = "default"
-frame = 1
 playing = true
-_sections_unfolded = [ "Z Index" ]
+_sections_unfolded = [ "Material", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 

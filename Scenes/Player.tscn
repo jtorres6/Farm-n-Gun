@@ -1,102 +1,125 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Projectile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Sniper.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/Animations/Caminar/Dcha-Diag/Diagonal_disparo_05.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Animations/Caminar/Dcha-Diag/Diagonal_disparo_06.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Animations/Caminar/Dcha-Diag/Diagonal_disparo_07.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Animations/Caminar/Dcha-Diag/Diagonal_disparo_08.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Animations/Caminar/Izquierda/Paso_01.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Animations/Caminar/Izquierda/Paso_02.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Animations/Caminar/Izquierda/Paso_03.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Animations/Caminar/Izquierda/Paso_04.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/Animations/Muerte/Izquierda/Muerte_05.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/Animations/Muerte/Izquierda/Muerte_06.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/Animations/Muerte/Izquierda/Muerte_07.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/Animations/Muerte/Izquierda/Muerte_08.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/Animations/Salto/Derecha/Salto_01.png" type="Texture" id=16]
-[ext_resource path="res://Sprites/Animations/Salto/Derecha/Salto_02.png" type="Texture" id=17]
-[ext_resource path="res://Sprites/Animations/Salto/Derecha/Salto_03.png" type="Texture" id=18]
-[ext_resource path="res://Sprites/Animations/Salto/Derecha/Salto_04.png" type="Texture" id=19]
-[ext_resource path="res://Sprites/Animations/Caminar/Derecha/Paso_05.png" type="Texture" id=20]
-[ext_resource path="res://Sprites/Animations/Caminar/Derecha/Paso_06.png" type="Texture" id=21]
-[ext_resource path="res://Sprites/Animations/Caminar/Derecha/Paso_7.png" type="Texture" id=22]
-[ext_resource path="res://Sprites/Animations/Caminar/Derecha/Paso_08.png" type="Texture" id=23]
-[ext_resource path="res://Sprites/Animations/Caminar/Izqda-Diag/Diagonal_disparo_01.png" type="Texture" id=24]
-[ext_resource path="res://Sprites/Animations/Caminar/Izqda-Diag/Diagonal_disparo_02.png" type="Texture" id=25]
-[ext_resource path="res://Sprites/Animations/Caminar/Izqda-Diag/Diagonal_disparo_04.png" type="Texture" id=26]
-[ext_resource path="res://Sprites/Animations/Caminar/Izqda-Diag/Diagonal_disparo_03.png" type="Texture" id=27]
-[ext_resource path="res://Sprites/Animations/Right/Respirar_pose_01_granjera_test.png" type="Texture" id=28]
-[ext_resource path="res://Sprites/Animations/Right/Respirar_pose_02_granjera_test.png" type="Texture" id=29]
-[ext_resource path="res://Sprites/Animations/Left/Respirar_pose_03_granjera_test.png" type="Texture" id=30]
-[ext_resource path="res://Sprites/Animations/Left/Respirar_pose_04_granjera_test.png" type="Texture" id=31]
-[ext_resource path="res://Sprites/Animations/Salto/Izquierda/Salto_05.png" type="Texture" id=32]
-[ext_resource path="res://Sprites/Animations/Salto/Izquierda/Salto_06.png" type="Texture" id=33]
-[ext_resource path="res://Sprites/Animations/Salto/Izquierda/Salto_07.png" type="Texture" id=34]
-[ext_resource path="res://Sprites/Animations/Salto/Izquierda/Salto_08.png" type="Texture" id=35]
-[ext_resource path="res://Sprites/Animations/Muerte/Derecha/Muerte_01.png" type="Texture" id=36]
-[ext_resource path="res://Sprites/Animations/Muerte/Derecha/Muerte_02.png" type="Texture" id=37]
-[ext_resource path="res://Sprites/Animations/Muerte/Derecha/Muerte_03.png" type="Texture" id=38]
-[ext_resource path="res://Sprites/Animations/Muerte/Derecha/Muerte_04.png" type="Texture" id=39]
-[ext_resource path="res://Sprites/Animations/Arriba/Disparo_caminando_Derecha_04.png" type="Texture" id=40]
+[ext_resource path="res://Sprites/Animations/Arriba/Disparo_caminando_Derecha_04.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Animations/Right/Respirar_pose_01_granjera_test.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Animations/Right/Respirar_pose_02_granjera_test.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Animations/Caminar/Dcha-Diag/Diagonal_disparo_05.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Animations/Caminar/Dcha-Diag/Diagonal_disparo_06.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Animations/Caminar/Dcha-Diag/Diagonal_disparo_07.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Animations/Caminar/Dcha-Diag/Diagonal_disparo_08.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Animations/Salto/Derecha/Salto_01.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Animations/Salto/Derecha/Salto_02.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Animations/Salto/Derecha/Salto_03.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Animations/Salto/Derecha/Salto_04.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Animations/Caminar/Derecha/Paso_05.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Animations/Caminar/Derecha/Paso_06.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Animations/Caminar/Derecha/Paso_7.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Animations/Caminar/Derecha/Paso_08.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Animations/Muerte/Izquierda/Muerte_05.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Animations/Muerte/Izquierda/Muerte_06.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Animations/Muerte/Izquierda/Muerte_07.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Animations/Muerte/Izquierda/Muerte_08.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Animations/Caminar/Izqda-Diag/Diagonal_disparo_01.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/Animations/Caminar/Izqda-Diag/Diagonal_disparo_02.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/Animations/Caminar/Izqda-Diag/Diagonal_disparo_04.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/Animations/Caminar/Izqda-Diag/Diagonal_disparo_03.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/Animations/Salto/Izquierda/Salto_05.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/Animations/Salto/Izquierda/Salto_06.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/Animations/Salto/Izquierda/Salto_07.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/Animations/Salto/Izquierda/Salto_08.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/Animations/Left/Respirar_pose_03_granjera_test.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/Animations/Left/Respirar_pose_04_granjera_test.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/Animations/Muerte/Derecha/Muerte_01.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/Animations/Muerte/Derecha/Muerte_02.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/Animations/Muerte/Derecha/Muerte_03.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/Animations/Muerte/Derecha/Muerte_04.png" type="Texture" id=36]
+[ext_resource path="res://Sprites/Animations/Caminar/Izquierda/Paso_01.png" type="Texture" id=37]
+[ext_resource path="res://Sprites/Animations/Caminar/Izquierda/Paso_02.png" type="Texture" id=38]
+[ext_resource path="res://Sprites/Animations/Caminar/Izquierda/Paso_03.png" type="Texture" id=39]
+[ext_resource path="res://Sprites/Animations/Caminar/Izquierda/Paso_04.png" type="Texture" id=40]
+
+[sub_resource type="Shader" id=3]
+
+code = "shader_type canvas_item;
+
+uniform bool invencible = false;
+
+void fragment(){
+	if(invencible){
+		COLOR = texture(TEXTURE,UV);
+		COLOR.a = COLOR.a * (sin(TIME*20.0)+1.0)/2.0;
+	}
+	else{
+		COLOR = texture(TEXTURE,UV)
+	}
+}"
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="ShaderMaterial" id=4]
+
+render_priority = 0
+shader = SubResource( 3 )
+shader_param/invencible = null
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "diag_right",
+"name": "up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "moving_left",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
-"loop": false,
-"name": "die_left",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "jump_right",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
-"loop": true,
-"name": "moving_right",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
-"loop": true,
-"name": "diag_left",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 28 ), ExtResource( 29 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "idle_right",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 30 ), ExtResource( 31 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
-"name": "idle_left",
-"speed": 3.0
+"name": "diag_right",
+"speed": 5.0
 }, {
-"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "jump_right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "moving_right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": false,
+"name": "die_left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "diag_left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
 "loop": true,
 "name": "jump_left",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ) ],
+"frames": [ ExtResource( 31 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "idle_left",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ) ],
 "loop": false,
 "name": "die_right",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 40 ) ],
+"frames": [ ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ) ],
 "loop": true,
-"name": "up",
+"name": "moving_left",
 "speed": 5.0
 } ]
 
@@ -106,7 +129,7 @@ custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 position = Vector2( 527.551, 568.325 )
 input_pickable = false
@@ -122,11 +145,12 @@ penetradora = null
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
+material = SubResource( 4 )
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 1 )
 animation = "idle_right"
 frame = 1
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 

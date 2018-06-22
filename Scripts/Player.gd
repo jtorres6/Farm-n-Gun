@@ -258,8 +258,9 @@ func _hitPlayer(dmg):
 		
 		if life < 0:
 			life = 0
-			
+		
 		get_parent().get_node("LabelHP").text = "%d%%" % life
+		get_node("AnimatedSprite").material.set_shader_param("invencible", invencible)
 		
 		if life == 0 and !muerto:
 			muerto = true
@@ -275,3 +276,4 @@ func _hitPlayer(dmg):
 	
 func _on_InvencibleTimer_timeout():
 	invencible = false
+	get_node("AnimatedSprite").material.set_shader_param("invencible", invencible)
