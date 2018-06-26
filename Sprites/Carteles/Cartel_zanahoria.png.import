@@ -7,10 +7,7 @@ path="res://.import/Cartel_zanahoria.png-682a6d24e16086b0ec8fa9607c1eca7a.stex"
 [deps]
 
 source_file="res://Sprites/Carteles/Cartel_zanahoria.png"
-source_md5="fdff7d30e2b67218454e1c7b630b90e3"
-
 dest_files=[ "res://.import/Cartel_zanahoria.png-682a6d24e16086b0ec8fa9607c1eca7a.stex" ]
-dest_md5="708f0172cbeae52e8192e6e40a9b0291"
 
 [params]
 

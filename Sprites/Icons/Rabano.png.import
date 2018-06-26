@@ -7,10 +7,7 @@ path="res://.import/Rabano.png-fbe19903449fd6e891fa2d3c2f532637.stex"
 [deps]
 
 source_file="res://Sprites/Icons/Rabano.png"
-source_md5="75fddf50fe29223e540c0f023aa28f1e"
-
 dest_files=[ "res://.import/Rabano.png-fbe19903449fd6e891fa2d3c2f532637.stex" ]
-dest_md5="a352529fb6a6f81f202388cde7ef2e3a"
 
 [params]
 

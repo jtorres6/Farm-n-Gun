@@ -7,10 +7,7 @@ path="res://.import/Salto_06.png-186d522a8d50674b48b3771ef10bfd0e.stex"
 [deps]
 
 source_file="res://Sprites/Animations/Saltar/Izquierda/Salto_06.png"
-source_md5="905bfe45c7411206d4d6b83549522ff0"
-
 dest_files=[ "res://.import/Salto_06.png-186d522a8d50674b48b3771ef10bfd0e.stex" ]
-dest_md5="ad2c113bd7764b2aaa9a06a28389fd29"
 
 [params]
 

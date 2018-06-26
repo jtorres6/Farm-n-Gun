@@ -7,10 +7,7 @@ path="res://.import/Paso_03.png-f17d9b8ffdbaffbc132860b5fbc63f1f.stex"
 [deps]
 
 source_file="res://Sprites/Animations/Caminar/Izquierda/Paso_03.png"
-source_md5="45ba39970f8c61cb66031fdbf3d94d71"
-
 dest_files=[ "res://.import/Paso_03.png-f17d9b8ffdbaffbc132860b5fbc63f1f.stex" ]
-dest_md5="06fefa50bbb03c32e7d98d410f0e4ada"
 
 [params]
 

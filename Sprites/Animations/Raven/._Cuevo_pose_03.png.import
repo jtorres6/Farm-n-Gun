@@ -7,8 +7,6 @@ valid=false
 [deps]
 
 source_file="res://Sprites/Animations/Raven/._Cuevo_pose_03.png"
-source_md5="a31e1ded6562cdf5f8e42c016e55d734"
-
 [params]
 
 compress/mode=0

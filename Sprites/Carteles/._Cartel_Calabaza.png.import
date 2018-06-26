@@ -7,8 +7,6 @@ valid=false
 [deps]
 
 source_file="res://Sprites/Carteles/._Cartel_Calabaza.png"
-source_md5="7012d687312a30427a5ceb9df06ba055"
-
 [params]
 
 compress/mode=0

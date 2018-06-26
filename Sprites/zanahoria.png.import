@@ -7,10 +7,7 @@ path="res://.import/zanahoria.png-261cd8cd64a28c7eb3f7eff08b94e568.stex"
 [deps]
 
 source_file="res://Sprites/zanahoria.png"
-source_md5="c27f4bd42953ada373f31d48efa020d3"
-
 dest_files=[ "res://.import/zanahoria.png-261cd8cd64a28c7eb3f7eff08b94e568.stex" ]
-dest_md5="2cec506fcdc514f9d4af6dc0be50eb05"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/Diagonal_disparo_03.png-46fc19e0fbd0358de5891cdb2687b856.ste
 [deps]
 
 source_file="res://Sprites/Animations/Caminar/Izqda-Diag/Diagonal_disparo_03.png"
-source_md5="395691cdb3b67882f5bd2cbc9201526a"
-
 dest_files=[ "res://.import/Diagonal_disparo_03.png-46fc19e0fbd0358de5891cdb2687b856.stex" ]
-dest_md5="d05fcb469c32a5042bf4fd4097f1cdb0"
 
 [params]
 

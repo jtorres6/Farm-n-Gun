@@ -7,10 +7,7 @@ path="res://.import/Disparo_Escopeta_03.png-2cb3084b3ca9f0fdab44bc84e1f38937.ste
 [deps]
 
 source_file="res://Sprites/Animations/Copeta/Disparo_Escopeta_03.png"
-source_md5="4249b7fadac9a6dbecbda37bf55cedc6"
-
 dest_files=[ "res://.import/Disparo_Escopeta_03.png-2cb3084b3ca9f0fdab44bc84e1f38937.stex" ]
-dest_md5="77b5f4e7d9b7c11465842382295fd4bd"
 
 [params]
 
