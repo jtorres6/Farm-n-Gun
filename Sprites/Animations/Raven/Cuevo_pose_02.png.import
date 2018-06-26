@@ -7,10 +7,7 @@ path="res://.import/Cuevo_pose_02.png-f8e705ebe8aa778a3a467d507f468c9b.stex"
 [deps]
 
 source_file="res://Sprites/Animations/Raven/Cuevo_pose_02.png"
-source_md5="5e3853d66cb25dcb68188c904b991a97"
-
 dest_files=[ "res://.import/Cuevo_pose_02.png-f8e705ebe8aa778a3a467d507f468c9b.stex" ]
-dest_md5="a6a995d1cb17fdb9177b5b6c892d0c6c"
 
 [params]
 

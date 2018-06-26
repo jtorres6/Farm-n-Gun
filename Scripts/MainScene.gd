@@ -2,8 +2,10 @@ extends Node2D
 
 var oleada = 1
 var intercambio_oleada_pendiente = false
+var pause = true
 
 func _process(delta):
+	
 	var ravens = get_node("RavenManager").contador_ravens
 	if ravens == 0 and intercambio_oleada_pendiente:
 		oleada += 1

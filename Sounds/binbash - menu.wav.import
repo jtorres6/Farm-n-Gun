@@ -7,10 +7,7 @@ path="res://.import/binbash - menu.wav-e07af4f7bb961e5848c44ce71ea44f93.sample"
 [deps]
 
 source_file="res://Sounds/binbash - menu.wav"
-source_md5="488d017e0203bf83613c66b76e50ee2c"
-
 dest_files=[ "res://.import/binbash - menu.wav-e07af4f7bb961e5848c44ce71ea44f93.sample" ]
-dest_md5="df1b7040f24bde16bd7adb45db1faf4d"
 
 [params]
 

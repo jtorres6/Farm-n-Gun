@@ -7,10 +7,7 @@ path="res://.import/Corazon.png-e4ab85c0033dc9aea865b6bd69b876c9.stex"
 [deps]
 
 source_file="res://Sprites/Corazon.png"
-source_md5="a9fff33ed0306ac2905ca0b18009aaa8"
-
 dest_files=[ "res://.import/Corazon.png-e4ab85c0033dc9aea865b6bd69b876c9.stex" ]
-dest_md5="8aa8a7a9451d9c710760c292baf2cace"
 
 [params]
 

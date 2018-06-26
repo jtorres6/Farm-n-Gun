@@ -7,10 +7,7 @@ path="res://.import/Respirar_pose_04_granjera_test.png-23b3c8fc2504722b0deabd58c
 [deps]
 
 source_file="res://Sprites/Animations/Left/Respirar_pose_04_granjera_test.png"
-source_md5="0145d19ababbf558f9c6a7b72b6331e3"
-
 dest_files=[ "res://.import/Respirar_pose_04_granjera_test.png-23b3c8fc2504722b0deabd58cb060410.stex" ]
-dest_md5="c3bbbcc78342ed2c23d8b2031a867db9"
 
 [params]
 

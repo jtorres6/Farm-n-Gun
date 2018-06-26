@@ -7,10 +7,7 @@ path="res://.import/tomato.png-60f470322fd27d243d067c9f192352be.stex"
 [deps]
 
 source_file="res://Sprites/tomato.png"
-source_md5="0d0c622ad5378421bb14bfe17174dfda"
-
 dest_files=[ "res://.import/tomato.png-60f470322fd27d243d067c9f192352be.stex" ]
-dest_md5="ae9a6e8e4c1d2f750859255c9dd4382a"
 
 [params]
 

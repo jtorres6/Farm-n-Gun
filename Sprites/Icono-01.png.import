@@ -7,10 +7,7 @@ path="res://.import/Icono-01.png-9aa83ef91cb5d463b6c8ae29b808c66c.stex"
 [deps]
 
 source_file="res://Sprites/Icono-01.png"
-source_md5="3bb87245f379d6f89024907fb97679dc"
-
 dest_files=[ "res://.import/Icono-01.png-9aa83ef91cb5d463b6c8ae29b808c66c.stex" ]
-dest_md5="6f7c464bbc1bbe2653fc900fab78342a"
 
 [params]
 

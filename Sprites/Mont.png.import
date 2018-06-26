@@ -7,10 +7,7 @@ path="res://.import/Mont.png-7201fb740c711c591bb769d66fdc1f50.stex"
 [deps]
 
 source_file="res://Sprites/Mont.png"
-source_md5="11a06bf59169eb64bf3f36cafa0fa64a"
-
 dest_files=[ "res://.import/Mont.png-7201fb740c711c591bb769d66fdc1f50.stex" ]
-dest_md5="4f5a03f84270004b75825faefc7fbc6f"
 
 [params]
 

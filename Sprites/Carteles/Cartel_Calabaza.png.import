@@ -7,10 +7,7 @@ path="res://.import/Cartel_Calabaza.png-ed817f7dda1dd8aeb6037b8de9216872.stex"
 [deps]
 
 source_file="res://Sprites/Carteles/Cartel_Calabaza.png"
-source_md5="77f7309ac373d30b577c4b58d83bbaf5"
-
 dest_files=[ "res://.import/Cartel_Calabaza.png-ed817f7dda1dd8aeb6037b8de9216872.stex" ]
-dest_md5="0e87f0f19185d8a49ec0cae40f34ddc9"
 
 [params]
 

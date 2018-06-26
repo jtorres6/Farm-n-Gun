@@ -7,10 +7,7 @@ path="res://.import/Menu 1-01.png-770b76d7503bdd59f65a1a66f4a43e80.stex"
 [deps]
 
 source_file="res://Sprites/Menu 1-01.png"
-source_md5="4da18be129356d0022fc03c1904798e1"
-
 dest_files=[ "res://.import/Menu 1-01.png-770b76d7503bdd59f65a1a66f4a43e80.stex" ]
-dest_md5="710bab8f5778450ca215fc2f60455673"
 
 [params]
 
