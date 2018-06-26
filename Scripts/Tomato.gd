@@ -24,7 +24,7 @@ func _ready():
 func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
-	if(inside_area and Input.is_action_just_pressed("ui_down")):
+	if(inside_area and Input.is_action_just_pressed("interact")):
 		if(hay_veg == true):
 			get_node("Plantado").visible = false
 			get_node("SinPlantar").visible = true

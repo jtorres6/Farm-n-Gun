@@ -23,10 +23,10 @@ var shoot_x = 1
 var aux_shoot_x = 1
 var shoot_y = 0
 var shooting = false
-var life = 100
+var life = 1000
 var invencible = false
-var weapon = 0
-var ammo = 0
+var weapon = 1
+var ammo = 10000
 var muerto = false
 
 func _ready():
@@ -57,7 +57,7 @@ func _physics_process(delta):
 			ammo = 0
 			get_parent().get_node("LabelAmmo").text = "UNLIMITED"
 			weapon = 0
-		
+			
 		if Input.is_action_pressed("ui_right"):
 			motion.x += ACCELERATION
 			if motion.x > MAX_SPEED:
@@ -108,6 +108,10 @@ func _physics_process(delta):
 		else:
 			shoot_x = aux_shoot_x
 		
+		if Input.is_action_pressed("ui_down") and !is_on_floor():
+			shoot_y = 1
+			shoot_x = 0
+		
 		if is_on_floor():
 			if Input.is_action_just_pressed("ui_select"):
 				motion.y = JUMP_HEIGHT
@@ -118,14 +122,15 @@ func _physics_process(delta):
 					$AnimatedSprite.animation = "jump_left"
 					#$AnimatedSprite.play()
 				get_parent().get_node("SoundEffects/Jump").play()
-		#else:
-			#$Sprite.play("Jump")
+		
 		if Input.is_action_pressed("ui_shoot") and !shooting:
 			match weapon:
 				0:
 					var new_projectile = projectile.instance()
-					if(shoot_y):
-						new_projectile.rotation_degrees =  -90 + 45*shoot_x
+					if(shoot_y == 1):
+						new_projectile.rotation_degrees =  90
+					elif(shoot_y):
+						new_projectile.rotation_degrees =  -90 + 45*shoot_x 
 					else:
 						new_projectile.scale.x = new_projectile.scale.x*shoot_x
 					new_projectile.position.x = position.x + OFFSETX * shoot_x
@@ -134,8 +139,13 @@ func _physics_process(delta):
 						localOFFY = OFFSETYD
 					elif(shoot_y == -1):
 						localOFFY = TOPOFF
+					elif(shoot_y == 1):
+						localOFFY = 1
 					else:
 						localOFFY = OFFSETY
+						
+					if(shoot_y == 1):
+						new_projectile.position.y = position.y + 50
 					new_projectile.position.y = position.y + localOFFY
 					new_projectile.xdirection = shoot_x 
 					new_projectile.ydirection = shoot_y
@@ -146,7 +156,9 @@ func _physics_process(delta):
 					get_parent().get_node("SoundEffects/NormalShot").play()
 				1:
 					var new_projectile = sniper.instance()
-					if(shoot_y):
+					if(shoot_y == 1):
+						new_projectile.rotation_degrees =  90
+					elif(shoot_y):
 						new_projectile.rotation_degrees =  -90 + 45*shoot_x
 					else:
 						new_projectile.scale.x = new_projectile.scale.x*shoot_x
@@ -156,9 +168,14 @@ func _physics_process(delta):
 						localOFFY = OFFSETYD
 					elif(shoot_y == -1):
 						localOFFY = TOPOFF
+					elif(shoot_y == 1):
+						localOFFY = 1
 					else:
 						localOFFY = OFFSETY
+						
 					new_projectile.position.y = position.y + localOFFY
+					if(shoot_y == 1):
+						new_projectile.position.y = position.y + 50
 					new_projectile.xdirection = shoot_x 
 					new_projectile.ydirection = shoot_y
 					get_parent().add_child(new_projectile)
@@ -168,7 +185,9 @@ func _physics_process(delta):
 					get_parent().get_node("SoundEffects/Sniper").play()
 				2:
 					var new_projectile = hmg.instance()
-					if(shoot_y):
+					if(shoot_y == 1):
+						new_projectile.rotation_degrees =  90
+					elif(shoot_y):
 						new_projectile.rotation_degrees =  -90 + 65*shoot_x
 					else:
 						new_projectile.scale.x = new_projectile.scale.x*shoot_x
@@ -178,9 +197,16 @@ func _physics_process(delta):
 						localOFFY = OFFSETYD
 					elif(shoot_y == -1):
 						localOFFY = TOPOFF
+					elif(shoot_y == 1):
+						localOFFY = 1
 					else:
 						localOFFY = OFFSETY
-					new_projectile.position.y = position.y + rand_range(-10,20)*shoot_x + localOFFY
+						
+					if(shoot_y == 1):
+						new_projectile.position.x = position.x + rand_range(-10,10)
+						new_projectile.position.y = position.y + 50
+					else:
+						new_projectile.position.y = position.y + rand_range(-10,20)*shoot_x + localOFFY
 					new_projectile.xdirection = shoot_x
 					new_projectile.ydirection = shoot_y
 					get_parent().add_child(new_projectile)
@@ -190,7 +216,9 @@ func _physics_process(delta):
 					get_parent().get_node("SoundEffects/NormalShot").play()
 				3:
 					var new_projectile = sg.instance()
-					if(shoot_y):
+					if(shoot_y == 1):
+						new_projectile.rotation_degrees =  90
+					elif(shoot_y):
 						new_projectile.rotation_degrees =  -90 + 45*shoot_x
 					else:
 						new_projectile.scale.x = new_projectile.scale.x*shoot_x
@@ -202,6 +230,8 @@ func _physics_process(delta):
 						localOFFY = TOPOFF
 					else:
 						localOFFY = OFFSETY
+					if(shoot_y == 1):
+						new_projectile.position.y = position.y + 50
 					new_projectile.position.y = position.y + localOFFY
 					new_projectile.xdirection = shoot_x 
 					new_projectile.ydirection = shoot_y
@@ -212,7 +242,9 @@ func _physics_process(delta):
 					get_parent().get_node("SoundEffects/ShotGun").play()
 				4:
 					var new_projectile = penetradora.instance()
-					if(shoot_y):
+					if(shoot_y == 1):
+						new_projectile.rotation_degrees =  90
+					elif(shoot_y):
 						new_projectile.rotation_degrees =  -90 + 65*shoot_x
 					else:
 						new_projectile.scale.x = new_projectile.scale.x*shoot_x
@@ -227,6 +259,8 @@ func _physics_process(delta):
 						localOFFY = TOPOFF
 					else:
 						localOFFY = OFFSETY
+					if(shoot_y == 1):
+						new_projectile.position.y = position.y + 50
 					new_projectile.position.y = position.y + localOFFY
 					new_projectile.xdirection = shoot_x 
 					new_projectile.ydirection = shoot_y
@@ -258,8 +292,9 @@ func _hitPlayer(dmg):
 		
 		if life < 0:
 			life = 0
-			
+		
 		get_parent().get_node("LabelHP").text = "%d%%" % life
+		get_node("AnimatedSprite").material.set_shader_param("invencible", invencible)
 		
 		if life == 0 and !muerto:
 			muerto = true
@@ -275,3 +310,4 @@ func _hitPlayer(dmg):
 	
 func _on_InvencibleTimer_timeout():
 	invencible = false
+	get_node("AnimatedSprite").material.set_shader_param("invencible", invencible)
