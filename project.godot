@@ -18,6 +18,10 @@ config/icon="res://Sprites/Icono-01.png"
 
 window/stretch/mode="viewport"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "net.kivano.fsm" )
+
 [input]
 
 ui_select=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)

@@ -3,9 +3,10 @@ extends KinematicBody2D
 var velocity = Vector2()
 var damage = 50
 var penetracion = false
+var delay = 0.25
 var xdirection
 var ydirection 
-var SPEED = 400
+var SPEED = 800
 
 func _process(delta):
 	var speedx = SPEED*1.2

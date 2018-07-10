@@ -1,313 +1,135 @@
 extends KinematicBody2D
 
-const UP = Vector2(0,-1)
-const GRAVITY = 20
-const ACCELERATION = 50
-const MAX_SPEED = 250
-const JUMP_HEIGHT = -1050
+#************* Player Parameters: ******************
 
-const OFFSETY = 18
-const OFFSETX = 20
-const OFFSETYD = -10
-const TOPOFF = -40
+var life = 100
 
-var motion = Vector2()
+#******** Direction and facing stuff ***************
 
-export (PackedScene) var projectile
-export (PackedScene) var sniper
-export (PackedScene) var hmg
-export (PackedScene) var sg
-export (PackedScene) var penetradora
+var input_direction = 0
+var direction = 0
+var facing_direction = 1
+var y_orientation = 0
 
-var shoot_x = 1
-var aux_shoot_x = 1
-var shoot_y = 0
-var shooting = false
-var life = 1000
-var invencible = false
-var weapon = 1
-var ammo = 10000
-var muerto = false
+#********** Movement Parameters *********************
+
+var speed_x = 0
+var speed_y = 0
+var velocity = Vector2()
+const MAX_SPEED = 500
+const ACCELERATION = 1200
+const DECELERATION = 2000
+const GRAVITY = 2000
+const JUMP_FORCE = 800
+const MAX_FALL_SPEED = 600
+
+#********** Another control params *******************
+
+var platformNameArray = ['Plataforma', 'Plataforma2']
+var isOnPlatform = false
+var canIShoot = true
+var ammoArray = []
+var currentAmmo = 0
+
+#*****************************************************
 
 func _ready():
-	#$AnimatedSprite.play("idle_right")
-	sniper = load("res://Scenes/Sniper.tscn")
-	hmg = load("res://Scenes/HMG.tscn")
-	sg = load("res://Scenes/Shotgun.tscn")
-	penetradora = load("res://Scenes/Penetradora.tscn")
-	pass
+	# Load ammo:
+	var projectile = load('res://Scenes/Projectile.tscn')
+	ammoArray.append(projectile)		# 0 Basic Ammo
+	projectile = load('res://Scenes/Sniper.tscn')
+	ammoArray.append(projectile)		# 1 Sniper
+	projectile = load('res://Scenes/Shotgun.tscn')
+	ammoArray.append(projectile)		# 2 Shotgun
+	projectile = load('res://Scenes/Penetradora.tscn')
+	ammoArray.append(projectile)		# 3 Carrot
+
+
+func _input(event):
+	# JUMP:
+	if Input.is_action_pressed('ui_accept') and is_on_floor():
+		speed_y = - JUMP_FORCE
+
+
+func InstanceBullet():
+	# FIXME:
+	var bullet = ammoArray[currentAmmo].instance()
+	bullet.ydirection = y_orientation
 	
+	if y_orientation:
+		bullet.xdirection = 0
+	else:
+		bullet.xdirection = facing_direction
+
+	bullet.position = self.position
+	$ShootDelay.wait_time = bullet.delay
+	get_parent().add_child(bullet)
+	$ShootDelay.start()
+
+
 func _physics_process(delta):
-	if weapon == 0:
-		get_parent().get_node("IconoAmmo").texture = load("res://Sprites/Icons/Maiz.png")
-	elif weapon == 1:
-		get_parent().get_node("IconoAmmo").texture = load("res://Sprites/Icons/Tomate.png")
-	elif weapon == 2:
-		get_parent().get_node("IconoAmmo").texture = load("res://Sprites/Icons/Calabaza.png")
-	elif weapon == 3:
-		get_parent().get_node("IconoAmmo").texture = load("res://Sprites/Icons/Rabano.png")
-	elif weapon == 4:
-		get_parent().get_node("IconoAmmo").texture = load("res://Sprites/Icons/Zanahoria.png")
-	
-	if !muerto:
-		motion.y += ACCELERATION
-		shoot_y = 0
-		
-		if ammo <= 0:
-			ammo = 0
-			get_parent().get_node("LabelAmmo").text = "UNLIMITED"
-			weapon = 0
-			
-		if Input.is_action_pressed("ui_right"):
-			motion.x += ACCELERATION
-			if motion.x > MAX_SPEED:
-				motion.x = MAX_SPEED
-			shoot_x = 1
-			aux_shoot_x = shoot_x
-			if Input.is_action_pressed("ui_up"):
-				if(is_on_floor()):
-					$AnimatedSprite.animation = "diag_right"
-			else:
-				if(is_on_floor()):
-					$AnimatedSprite.animation = "moving_right"
-			
-			#$Sprite.flip_h = false
-			#$Sprite.play("Run")
-		elif Input.is_action_pressed("ui_left"):
-			motion.x -= ACCELERATION
-			if motion.x < -MAX_SPEED:
-				motion.x = -MAX_SPEED
-			shoot_x = -1
-			aux_shoot_x = shoot_x
-			if Input.is_action_pressed("ui_up"):
-				if(is_on_floor()):
-					$AnimatedSprite.animation = "diag_left"
-			else:
-				if(is_on_floor()):
-					$AnimatedSprite.animation = "moving_left"
-			#$Sprite.flip_h = true
-			#$Sprite.play("Run")
-		else:
-			if shoot_x == 1:
-				if(is_on_floor()):
-					$AnimatedSprite.animation = "idle_right"
-			if shoot_x == -1:
-				if(is_on_floor()):
-					$AnimatedSprite.animation = "idle_left"
-				
-			motion.x = 0
-		if Input.is_action_pressed("ui_up") and is_on_floor():
-			shoot_y = -1
-			if motion.x == 0:
-				shoot_x = 0
-				$AnimatedSprite.animation = "up"
-			else:
-				shoot_y = -0.25
-				shoot_x = aux_shoot_x
-					
-		else:
-			shoot_x = aux_shoot_x
-		
-		if Input.is_action_pressed("ui_down") and !is_on_floor():
-			shoot_y = 1
-			shoot_x = 0
-		
+
+	# Check movement orientation:
+	if input_direction:
+		direction = input_direction
 		if is_on_floor():
-			if Input.is_action_just_pressed("ui_select"):
-				motion.y = JUMP_HEIGHT
-				if shoot_x == 1:
-					$AnimatedSprite.animation = "jump_right"
-					#$AnimatedSprite.play()
-				if shoot_x == -1:
-					$AnimatedSprite.animation = "jump_left"
-					#$AnimatedSprite.play()
-				get_parent().get_node("SoundEffects/Jump").play()
-		
-		if Input.is_action_pressed("ui_shoot") and !shooting:
-			match weapon:
-				0:
-					var new_projectile = projectile.instance()
-					if(shoot_y == 1):
-						new_projectile.rotation_degrees =  90
-					elif(shoot_y):
-						new_projectile.rotation_degrees =  -90 + 45*shoot_x 
-					else:
-						new_projectile.scale.x = new_projectile.scale.x*shoot_x
-					new_projectile.position.x = position.x + OFFSETX * shoot_x
-					var localOFFY
-					if(shoot_y == -0.25):
-						localOFFY = OFFSETYD
-					elif(shoot_y == -1):
-						localOFFY = TOPOFF
-					elif(shoot_y == 1):
-						localOFFY = 1
-					else:
-						localOFFY = OFFSETY
-						
-					if(shoot_y == 1):
-						new_projectile.position.y = position.y + 50
-					new_projectile.position.y = position.y + localOFFY
-					new_projectile.xdirection = shoot_x 
-					new_projectile.ydirection = shoot_y
-					get_parent().add_child(new_projectile)
-					shooting = true
-					$ShootingTimer.wait_time = 0.25
-					$ShootingTimer.start()
-					get_parent().get_node("SoundEffects/NormalShot").play()
-				1:
-					var new_projectile = sniper.instance()
-					if(shoot_y == 1):
-						new_projectile.rotation_degrees =  90
-					elif(shoot_y):
-						new_projectile.rotation_degrees =  -90 + 45*shoot_x
-					else:
-						new_projectile.scale.x = new_projectile.scale.x*shoot_x
-					new_projectile.position.x = position.x + OFFSETX * shoot_x
-					var localOFFY
-					if(shoot_y == -0.25):
-						localOFFY = OFFSETYD
-					elif(shoot_y == -1):
-						localOFFY = TOPOFF
-					elif(shoot_y == 1):
-						localOFFY = 1
-					else:
-						localOFFY = OFFSETY
-						
-					new_projectile.position.y = position.y + localOFFY
-					if(shoot_y == 1):
-						new_projectile.position.y = position.y + 50
-					new_projectile.xdirection = shoot_x 
-					new_projectile.ydirection = shoot_y
-					get_parent().add_child(new_projectile)
-					shooting = true
-					$ShootingTimer.wait_time = 2
-					$ShootingTimer.start()
-					get_parent().get_node("SoundEffects/Sniper").play()
-				2:
-					var new_projectile = hmg.instance()
-					if(shoot_y == 1):
-						new_projectile.rotation_degrees =  90
-					elif(shoot_y):
-						new_projectile.rotation_degrees =  -90 + 65*shoot_x
-					else:
-						new_projectile.scale.x = new_projectile.scale.x*shoot_x
-					new_projectile.position.x = position.x + rand_range(-10,20)*shoot_y + OFFSETX * shoot_x
-					var localOFFY
-					if(shoot_y == -0.25):
-						localOFFY = OFFSETYD
-					elif(shoot_y == -1):
-						localOFFY = TOPOFF
-					elif(shoot_y == 1):
-						localOFFY = 1
-					else:
-						localOFFY = OFFSETY
-						
-					if(shoot_y == 1):
-						new_projectile.position.x = position.x + rand_range(-10,10)
-						new_projectile.position.y = position.y + 50
-					else:
-						new_projectile.position.y = position.y + rand_range(-10,20)*shoot_x + localOFFY
-					new_projectile.xdirection = shoot_x
-					new_projectile.ydirection = shoot_y
-					get_parent().add_child(new_projectile)
-					shooting = true
-					$ShootingTimer.wait_time = 0.1
-					$ShootingTimer.start()
-					get_parent().get_node("SoundEffects/NormalShot").play()
-				3:
-					var new_projectile = sg.instance()
-					if(shoot_y == 1):
-						new_projectile.rotation_degrees =  90
-					elif(shoot_y):
-						new_projectile.rotation_degrees =  -90 + 45*shoot_x
-					else:
-						new_projectile.scale.x = new_projectile.scale.x*shoot_x
-					new_projectile.position.x = position.x + OFFSETX * shoot_x
-					var localOFFY
-					if(shoot_y == -0.25):
-						localOFFY = OFFSETYD
-					elif(shoot_y == -1):
-						localOFFY = TOPOFF
-					else:
-						localOFFY = OFFSETY
-					if(shoot_y == 1):
-						new_projectile.position.y = position.y + 50
-					new_projectile.position.y = position.y + localOFFY
-					new_projectile.xdirection = shoot_x 
-					new_projectile.ydirection = shoot_y
-					get_parent().add_child(new_projectile)
-					shooting = true
-					$ShootingTimer.wait_time = 1
-					$ShootingTimer.start()
-					get_parent().get_node("SoundEffects/ShotGun").play()
-				4:
-					var new_projectile = penetradora.instance()
-					if(shoot_y == 1):
-						new_projectile.rotation_degrees =  90
-					elif(shoot_y):
-						new_projectile.rotation_degrees =  -90 + 65*shoot_x
-					else:
-						new_projectile.scale.x = new_projectile.scale.x*shoot_x
-					new_projectile.position = position 
-					new_projectile.xdirection = shoot_x + OFFSETX * shoot_x
-					new_projectile.ydirection = shoot_y
-					new_projectile.position.x = position.x + OFFSETX * shoot_x
-					var localOFFY
-					if(shoot_y == -0.25):
-						localOFFY = OFFSETYD
-					elif(shoot_y == -1):
-						localOFFY = TOPOFF
-					else:
-						localOFFY = OFFSETY
-					if(shoot_y == 1):
-						new_projectile.position.y = position.y + 50
-					new_projectile.position.y = position.y + localOFFY
-					new_projectile.xdirection = shoot_x 
-					new_projectile.ydirection = shoot_y
-					get_parent().add_child(new_projectile)
-					shooting = true
-					$ShootingTimer.wait_time = 0.25
-					$ShootingTimer.start()
-					get_parent().get_node("SoundEffects/NormalShot").play()
+			facing_direction = input_direction
 			
-			if weapon != 0:
-				ammo -= 1
+	# y orientation:
+	if Input.is_action_pressed('ui_up'):
+		y_orientation = -1
+	elif Input.is_action_pressed('ui_down') and not is_on_floor():
+		y_orientation = 1
+	else:
+		y_orientation = 0
 	
-	if(weapon != 0):
-		get_parent().get_node("LabelAmmo").text = "%d" % ammo
+	if Input.is_action_pressed("ui_left"):
+		input_direction = -1
+	elif Input.is_action_pressed("ui_right"):
+		input_direction = 1
+	else:
+		input_direction = 0
+	
+	# Set speed:
+	if input_direction == - direction:
+		speed_x /= 3
+	if input_direction:
+		speed_x += ACCELERATION * delta
+	else:
+		speed_x -= DECELERATION * delta
 		
-	$AnimatedSprite.play()
-		
-	motion = move_and_slide(motion, UP)
-	pass
+	speed_y += GRAVITY * delta
 
-func _on_ShootingTimer_timeout():
-	shooting = false
-
-func _hitPlayer(dmg):
-	if !invencible:
-		life -= dmg
-		invencible = true
-		$InvencibleTimer.start()
-		
-		if life < 0:
-			life = 0
-		
-		get_parent().get_node("LabelHP").text = "%d%%" % life
-		get_node("AnimatedSprite").material.set_shader_param("invencible", invencible)
-		
-		if life == 0 and !muerto:
-			muerto = true
-			if motion.x < 0:
-				$AnimatedSprite.animation = "die_left"
-			else:
-				$AnimatedSprite.animation = "die_right"
-			motion.x = 0
+	# Limit speed to MAX value:
+	speed_x = clamp(speed_x, 0, MAX_SPEED)
+	
+	if speed_y > MAX_FALL_SPEED:
+		speed_y = MAX_FALL_SPEED
+	
+	# Set velocity vector and move player:
+	velocity.x = speed_x * direction
+	velocity.y = speed_y
+	move_and_slide(velocity, Vector2(0,-1))
+	
+	# Check if player is on a platform
+	for i in range(get_slide_count()):
+		var collision = get_slide_collision(i)
+		if collision.collider.name in platformNameArray:
+			isOnPlatform = true
+		else:
+			isOnPlatform = false
 			
-			var fade = get_parent().get_node("Fade2")
-			fade._loadScene("res://Scenes/Menu.tscn")
-			emit_signal("game_over")
-	
-func _on_InvencibleTimer_timeout():
-	invencible = false
-	get_node("AnimatedSprite").material.set_shader_param("invencible", invencible)
+	# If player is over a platform and press 'down', it falls:
+	if isOnPlatform and Input.is_action_just_pressed('ui_down'):
+		get_node('CollisionShape2D').disabled = true
+	else:
+		get_node('CollisionShape2D').disabled = false
+		
+	# Shoot
+	if Input.is_action_pressed('ui_shoot') and canIShoot:
+		canIShoot = false
+		InstanceBullet()
+
+
+func _on_ShootDelay_timeout():
+	canIShoot = true

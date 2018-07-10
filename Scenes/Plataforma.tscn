@@ -7,7 +7,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 60, 10 )
 
-[node name="Plataforma" type="StaticBody2D"]
+[node name="Plataforma" type="StaticBody2D" index="0"]
 
 z_index = -1
 input_pickable = false
@@ -28,5 +28,6 @@ texture = ExtResource( 1 )
 
 shape = SubResource( 1 )
 one_way_collision = true
+_sections_unfolded = [ "Transform" ]
 
 

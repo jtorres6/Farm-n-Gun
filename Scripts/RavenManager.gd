@@ -17,10 +17,12 @@ func _ready():
 	pass
 
 func _on_Timer_timeout():
+	"""
 	if generar_ravens:
 		for i in range(cantidad_ravens_spawn):
 			contador_ravens += 1
 			var newRaven = raven.instance()
 			newRaven.position = positions[randi()%6]
 			get_parent().add_child(newRaven)
+	"""
 	pass
