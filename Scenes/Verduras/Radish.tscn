@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/Radish.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/nabo.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Carteles/Cartel_Nabo.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Mont.png" type="Texture" id=4]
+[ext_resource path="res://Fonts/Pixel Cowboy.otf" type="DynamicFontData" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 31.9865, 31.526 )
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 25
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 5 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Vegetable" type="Area2D" index="0"]
+
+position = Vector2( 496.594, 565.09 )
+z_index = -1
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 16
+collision_mask = 33
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Z Index" ]
+
+[node name="Plantado" type="Sprite" parent="." index="0"]
+
+position = Vector2( -5.97076, 3.31708 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Offset", "Region", "Visibility", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 12.0
+one_shot = true
+autostart = false
+
+[node name="SinPlantar" type="Sprite" parent="." index="3"]
+
+position = Vector2( -1.32678, 4.87927 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Creciendo" type="Sprite" parent="." index="4"]
+
+position = Vector2( 0.663513, 11.8361 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Label" type="Label" parent="." index="5"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -24.0
+margin_top = 44.0
+margin_right = 40.0
+margin_bottom = 73.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[connection signal="body_entered" from="." to="." method="_on_Vegetable_body_entered"]
+
+[connection signal="body_exited" from="." to="." method="_on_Vegetable_body_exited"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+

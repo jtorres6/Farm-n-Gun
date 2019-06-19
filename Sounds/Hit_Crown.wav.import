@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Hit_Crown.wav-3d9f6cadff6dcd400fa89039e8b3d969.sample"
+
+[deps]
+
+source_file="res://Sounds/Hit_Crown.wav"
+dest_files=[ "res://.import/Hit_Crown.wav-3d9f6cadff6dcd400fa89039e8b3d969.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
