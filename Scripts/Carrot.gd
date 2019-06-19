@@ -4,7 +4,7 @@ extends Area2D
 # var a = 2
 # var b = "textvar"
 var type = 4
-var ammo = 12
+var ammo = 20
 
 
 var inside_area
@@ -22,12 +22,12 @@ func _ready():
 	pass
 
 func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
+	$Label.text = str(int($Timer.time_left + 1)) + "s"
 	if(inside_area and Input.is_action_just_pressed("interact")):
 		if(hay_veg == true):
 			get_node("Plantado").visible = false
 			get_node("SinPlantar").visible = true
+			$Label.visible = false
 			hay_veg = false
 			get_parent().get_node("SoundEffects/Recolect").play()
 			#AQUI CAMBIAR EL ARMAAAA Y LAS COSASSSS
@@ -40,6 +40,7 @@ func _process(delta):
 			if(!active_time):
 				get_node("SinPlantar").visible = false
 				get_node("Creciendo").visible = true
+				$Label.visible = true
 				get_node("Timer").start()
 				active_time = true
 				get_parent().get_node("SoundEffects/Plant").play()
@@ -61,6 +62,7 @@ func _on_Vegetable_body_exited(body):
 func _on_Timer_timeout():
 	get_node("Plantado").visible = true
 	get_node("Creciendo").visible = false
+	$Label.visible = false
 	hay_veg = true
 	active_time = false
 	pass # replace with function body

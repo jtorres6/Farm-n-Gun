@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/DirectionManager.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/MetalSlug.png" type="Texture" id=3]
+[ext_resource path="res://Sounds/NormalShot.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/Snniper.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/ShotGun.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sounds/Jump.wav" type="AudioStream" id=7]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -10,15 +14,37 @@ custom_solver_bias = 0.0
 radius = 20.959
 height = 25.9857
 
+[sub_resource type="Shader" id=2]
+
+code = "shader_type canvas_item;
+
+uniform bool invencible = false;
+
+void fragment(){
+	if(invencible){
+		COLOR = texture(TEXTURE,UV);
+		COLOR.a = COLOR.a * (sin(TIME*20.0)+1.0)/2.0;
+	}
+	else{
+		COLOR = texture(TEXTURE,UV)
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+
+render_priority = 0
+shader = SubResource( 2 )
+shader_param/invencible = null
+
 [node name="Player" type="KinematicBody2D" index="0"]
 
 position = Vector2( 317.68, 183.207 )
 input_pickable = false
 collision_layer = 1
-collision_mask = 1
+collision_mask = 58
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -39,12 +65,31 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Visuals" index="0"]
 
+material = SubResource( 3 )
 scale = Vector2( 0.187751, 0.187751 )
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="NormalShot" type="Node2D" parent="Visuals" index="1"]
+
+position = Vector2( 42.1049, 0.397217 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="UpShot" type="Node2D" parent="Visuals" index="2"]
+
+position = Vector2( 17.0803, -39.3243 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DownShot" type="Node2D" parent="Visuals" index="3"]
+
+position = Vector2( 17.0803, 29.394 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="ShootDelay" type="Timer" parent="." index="3"]
 
@@ -53,6 +98,53 @@ wait_time = 0.25
 one_shot = false
 autostart = false
 
+[node name="InvencibleTimer" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = false
+
+[node name="SoundEffects" type="Node2D" parent="." index="5"]
+
+[node name="NormalShot" type="AudioStreamPlayer" parent="SoundEffects" index="0"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Sniper" type="AudioStreamPlayer" parent="SoundEffects" index="1"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Shotgun" type="AudioStreamPlayer" parent="SoundEffects" index="2"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Jump" type="AudioStreamPlayer" parent="SoundEffects" index="3"]
+
+stream = ExtResource( 7 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
 [connection signal="timeout" from="ShootDelay" to="." method="_on_ShootDelay_timeout"]
+
+[connection signal="timeout" from="InvencibleTimer" to="." method="_on_InvencibleTimer_timeout"]
 
 

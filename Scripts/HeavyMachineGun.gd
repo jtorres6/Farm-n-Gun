@@ -2,20 +2,19 @@ extends KinematicBody2D
 
 var velocity = Vector2()
 var type = "projectile"
-var damage = 20
+var damage = 50
 var penetracion = true
+var delay = 0.1
 
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
 var xdirection
 var ydirection 
-var SPEED = 600
+var SPEED = 1200
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	$AnimatedSprite.animation = "fire"
-	$AnimatedSprite.play()
 	pass
 
 func _process(delta):

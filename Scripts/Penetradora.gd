@@ -5,7 +5,8 @@ var damage = 50
 var penetracion = true
 var xdirection
 var ydirection 
-var SPEED = 400
+var SPEED = 800
+var delay = 0.25
 
 func _process(delta):
 	var speedx = SPEED*1.2

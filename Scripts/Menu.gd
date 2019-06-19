@@ -3,6 +3,7 @@ extends CanvasLayer
 var fade 
 
 func _ready():
+	$PlayButton.grab_focus()
 	fade = get_node("Fade")
 
 func _on_PlayButton_pressed():
@@ -23,11 +24,6 @@ func _on_Credits_pressed():
 func _on_Controls_pressed():
 	$Controls.disabled = true
 	fade._loadScene("res://Scenes/Controls.tscn")
-	fade.fading_out = true
-
-func _on_Ranking_pressed():
-	$Ranking.disabled = true
-	fade._loadScene("res://Scenes/Ranking.tscn")
 	fade.fading_out = true
 
 func _on_MenuTheme_finished():

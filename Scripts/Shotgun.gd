@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
 var velocity = Vector2()
-var damage = 100
+var damage = 1000
 var penetracion = true
+var delay = 1
 
 var xdirection
 var ydirection 
