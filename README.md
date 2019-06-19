@@ -1,3 +1,3 @@
 # Farm 'n' Gun
 
-[Check it out here!](https://binbash-jammers.itch.io/farm-n-gun)
+<img src="sprites/Menu_ilustracion.png" alt="Ilustration by Carlos Lustres">
