@@ -8,3 +8,5 @@
  Survive as much as you can and try to beat developers record: 14 rounds!
 
 <img src="Sprites/Mapa.png">
+
+If you are lazy to play, check this awesome gameplays in [Spanish](https://www.youtube.com/watch?v=JWMYgnmZMIU) or in [English<+(https://www.youtube.com/watch?v=D0TtEZQELl)
